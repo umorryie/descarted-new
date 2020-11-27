@@ -7,3 +7,5 @@
     - `EntityFrameworkCore\Add-Migration nameOfMigration`
     - `EntityFrameworkCore\Update-Database`
 - Then run aplication and go to: `https://localhost:44387/` where is Swagger. In order for everything to work make sure that you have data base configured!
+
+- Tests are written in project: `Tests`.
