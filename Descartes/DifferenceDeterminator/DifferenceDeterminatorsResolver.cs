@@ -8,7 +8,7 @@ namespace Descartes.DifferenceDeterminator
 {
     public class DifferenceDeterminatorsResolver : IDifferenceDeterminatorResolver
     {
-        public string determineDifferences(string leftValues, string rightValues)
+        public string DetermineDifferences(string leftValues, string rightValues)
         {
             DifferenceResponse response = new DifferenceResponse();
 
@@ -23,22 +23,31 @@ namespace Descartes.DifferenceDeterminator
             else
             {
                 response.DiffResultType = "ContentDoNotMatch";
-                response.Diffs = getDifferences(leftValues, rightValues);
+                response.Diffs = GetDifferences(leftValues, rightValues);
             }
 
             return JsonConvert.SerializeObject(response);
         }
 
-        private List<Difference> getDifferences(string leftValues, string rightValues)
+        private List<Difference> GetDifferences(string leftValues, string rightValues)
         {
             List<Difference> differencesResponse = new List<Difference>();
+
+            // index where comparison of left and right part of equation starts to differ
             int indexOfStart = 0;
+
+            // length of that particular consecutive difference
             int length = 0;
+
+            // determine if current comparation needs to have new block or it is a part of already existing difference
             bool different = false;
+
+            // to determine when to insert difference on differencesResponse
             bool shallInsert = false;
 
             for (int i = 0; i < leftValues.Length; i++)
             {
+                // if left and right values are not the same, set different to true, add length, determine start of difference
                 if (leftValues[i] != rightValues[i])
                 {
                     if (!different)
@@ -52,6 +61,8 @@ namespace Descartes.DifferenceDeterminator
                 }
                 else
                 {
+                    // if left and right values are the same
+                    // shallInsert is true untill we get matching left and right part
                     if (shallInsert)
                     {
                         differencesResponse.Add(new Difference()
@@ -64,11 +75,14 @@ namespace Descartes.DifferenceDeterminator
                         shallInsert = false;
                     }
 
+                    // after insertion reset length, set different to false
                     length = 0;
                     different = false;
                 }
             }
 
+            // after we check everything there might be case, when difference is at the end
+            // if that is the case we must insert that difference because algorithm does not check if difference stil occurs at the end of the string
             if (length > 0)
             {
                 differencesResponse.Add(new Difference()
@@ -80,6 +94,7 @@ namespace Descartes.DifferenceDeterminator
                 });
             }
 
+            // return all differences
             return differencesResponse;
         }
     }

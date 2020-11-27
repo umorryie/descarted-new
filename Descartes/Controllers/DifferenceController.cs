@@ -24,51 +24,62 @@ namespace Descartes.Controllers
 
         [HttpPut]
         [Route("{id}/left")]
-        public HttpException saveLeft([FromBody] RequestDifferenceInputHelper requestInput, int id)
+        public IActionResult SaveLeftPartOfEquation([FromBody] RequestDifferenceInputHelper requestInput, int id)
         {
-            if(requestInput == null)
+            if(requestInput.data == null)
             {
-                throw new HttpException(404, "Not Found");
+                return BadRequest();
             }
 
-            _differenceRepository.saveObject("left", requestInput, id);
+            _differenceRepository.SaveObject("left", requestInput, id);
 
-            return new HttpException(401, "Created");
+            return Ok();
         }
 
         [HttpPut]
         [Route("{id}/right")]
-        public HttpException saveRight([FromBody] RequestDifferenceInputHelper requestInput, int id)
+        public IActionResult SaveRightPartOfEquation([FromBody] RequestDifferenceInputHelper requestInput, int id)
         {
-            if (requestInput == null)
+            if (requestInput.data == null)
             {
-                throw new HttpException(404, "Not Found");
+                return BadRequest();
             }
 
-            _differenceRepository.saveObject("right", requestInput, id);
+            _differenceRepository.SaveObject("right", requestInput, id);
 
-            return new HttpException(401, "Created");
+            return Ok();
         }
 
         [HttpGet]
         [Route("{id}")]
-        public object getDifferences(int id)
+        public IActionResult GetDifferences(int id)
         {
-            string differences = _differenceRepository.determineDifferences(id);
+            string differences = _differenceRepository.DetermineDifferences(id);
 
             if(differences == null)
             {
-                throw new HttpException(404, "Not Found");
+                return NotFound();
             }
 
-            return JsonConvert.DeserializeObject<DifferenceResponse>(differences);
+            var objectDifferences = JsonConvert.DeserializeObject<DifferenceResponse>(differences);
+
+            return Ok(objectDifferences);
         }
 
         [HttpGet]
         [Route("getAllDatabaseContent")]
-        public List<DifferenceObject> getAllDatabaseContent()
+        public IActionResult GetAllDatabaseContent()
         {
-            return _differenceRepository.getAllDatabaseContent();
+            try
+            {
+                var allDbContent = _differenceRepository.GetAllDatabaseContent();
+
+                return Ok(allDbContent);
+            }
+            catch (Exception e)
+            {
+                return NotFound(e);
+            }
         }
     }
 

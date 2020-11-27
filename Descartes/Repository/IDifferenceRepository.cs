@@ -9,10 +9,10 @@ namespace Descartes.Repository
 {
     public interface IDifferenceRepository
     {
-        public string determineDifferences(int id);
+        public string DetermineDifferences(int id);
 
-        public void saveObject(string identifier, RequestDifferenceInputHelper requestInput, int id);
+        public void SaveObject(string identifier, RequestDifferenceInputHelper requestInput, int id);
 
-        public List<DifferenceObject> getAllDatabaseContent();
+        public List<DifferenceObject> GetAllDatabaseContent();
     }
 }

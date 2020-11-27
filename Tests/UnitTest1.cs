@@ -69,9 +69,9 @@ namespace Tests
             };
 
             // Act
-            string result1 = determineDifferences("AAAAAAAAAAAA", "BABBABBBACAC");
-            string result2 = determineDifferences("AAA", "BABBABBB");
-            string result3 = determineDifferences("AAA", "AAA");
+            string result1 = DetermineDifferences("AAAAAAAAAAAA", "BABBABBBACAC");
+            string result2 = DetermineDifferences("AAA", "BABBABBB");
+            string result3 = DetermineDifferences("AAA", "AAA");
 
             DifferenceResponse result11 = JsonConvert.DeserializeObject<DifferenceResponse>(result1);
             DifferenceResponse result22 = JsonConvert.DeserializeObject<DifferenceResponse>(result2);

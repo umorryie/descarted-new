@@ -20,18 +20,18 @@ namespace Descartes.Repository
             _diffContext = diffContext;
         }
 
-        public string determineDifferences(int id)
+        public string DetermineDifferences(int id)
         {
             DifferenceObject response = _diffContext.DifferenceObject.FirstOrDefault<DifferenceObject>(diffObject => diffObject.Id == id);
 
             return response != null ? response.DiffResult : null;
         }
 
-        private void saveRight(RequestDifferenceInputHelper requestInput, int id)
+        private void SaveRightPartOfEquation(RequestDifferenceInputHelper requestInput, int id)
         {
             try
             {
-                DifferenceObject result = getAllDatabaseContent().FirstOrDefault<DifferenceObject>(diffObject => diffObject.Id == id);
+                DifferenceObject result = GetAllDatabaseContent().FirstOrDefault<DifferenceObject>(diffObject => diffObject.Id == id);
 
                 if (result == null)
                 {
@@ -46,7 +46,11 @@ namespace Descartes.Repository
                 else
                 {
                     result.RightValue = requestInput.data;
-                    result.DiffResult = _differenceDeterminator.determineDifferences(result.LeftValue, result.RightValue);
+
+                    if (result.LeftValue != null)
+                    {
+                        result.DiffResult = _differenceDeterminator.DetermineDifferences(result.LeftValue, result.RightValue);
+                    }
                 }
 
                 _diffContext.SaveChanges();
@@ -57,11 +61,11 @@ namespace Descartes.Repository
             }
         }
 
-        private void saveLeft(RequestDifferenceInputHelper requestInput, int id)
+        private void SaveLeftpartOfEquation(RequestDifferenceInputHelper requestInput, int id)
         {
             try
             {
-                DifferenceObject result = getAllDatabaseContent().FirstOrDefault<DifferenceObject>(diffObject => diffObject.Id == id);
+                DifferenceObject result = GetAllDatabaseContent().FirstOrDefault<DifferenceObject>(diffObject => diffObject.Id == id);
 
                 if (result == null)
                 {
@@ -76,7 +80,11 @@ namespace Descartes.Repository
                 else
                 {
                     result.LeftValue = requestInput.data;
-                    result.DiffResult = _differenceDeterminator.determineDifferences(result.LeftValue, result.RightValue);
+
+                    if (result.RightValue != null)
+                    {
+                        result.DiffResult = _differenceDeterminator.DetermineDifferences(result.LeftValue, result.RightValue);
+                    }
                 }
 
                 _diffContext.SaveChanges();
@@ -87,19 +95,19 @@ namespace Descartes.Repository
             }
         }
 
-        public void saveObject(string identifier, RequestDifferenceInputHelper requestInput, int id)
+        public void SaveObject(string identifier, RequestDifferenceInputHelper requestInput, int id)
         {
             if(identifier == "left")
             {
-                saveLeft(requestInput, id);
+                SaveLeftpartOfEquation(requestInput, id);
             }
             else
             {
-                saveRight(requestInput, id);
+                SaveRightPartOfEquation(requestInput, id);
             }
         }
 
-        public List<DifferenceObject> getAllDatabaseContent()
+        public List<DifferenceObject> GetAllDatabaseContent()
         {
             return _diffContext.DifferenceObject.ToList<DifferenceObject>();
         }
