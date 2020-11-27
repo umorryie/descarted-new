@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hHw9WIIF/mPWnsMPQ+hCb128C9GY+5gbPuAZZTAz8VA7E4yfoe9tfLnD/v6SncB45Ze0kkUeD+EQupIhY8tgPQ==",
+  "dgSpecHash": "tMVLQhZDeqenPnca2slAH2hJ+cSYV9CugrtZcXtYtpaPBrLEZMvrCCENJkZDooKDjRCV2waLN/FrEEF4Ee3+vQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\Descartes.csproj",
+  "projectFilePath": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\Descartes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pesja\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\pesja\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

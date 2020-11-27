@@ -10247,11 +10247,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\Descartes.csproj",
+      "projectUniqueName": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\Descartes.csproj",
       "projectName": "Descartes",
-      "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\Descartes.csproj",
+      "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\Descartes.csproj",
       "packagesPath": "C:\\Users\\pesja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\obj\\",
+      "outputPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pesja\\AppData\\Roaming\\NuGet\\NuGet.Config",

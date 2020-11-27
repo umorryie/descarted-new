@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Tests\\Tests.csproj": {}
+    "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\Descartes.csproj": {
+    "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\Descartes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\Descartes.csproj",
+        "projectUniqueName": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\Descartes.csproj",
         "projectName": "Descartes",
-        "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\Descartes.csproj",
+        "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\Descartes.csproj",
         "packagesPath": "C:\\Users\\pesja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\obj\\",
+        "outputPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pesja\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -103,14 +103,14 @@
         }
       }
     },
-    "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Tests\\Tests.csproj": {
+    "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Tests\\Tests.csproj",
+        "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Tests\\Tests.csproj",
         "packagesPath": "C:\\Users\\pesja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Tests\\obj\\",
+        "outputPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pesja\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -126,8 +126,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\Descartes.csproj": {
-                "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\DESCARTES\\Descartes\\Descartes.csproj"
+              "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\Descartes.csproj": {
+                "projectPath": "C:\\Users\\pesja\\OneDrive\\Desktop\\desrated\\swaggerDESCARTES\\Descartes\\Descartes.csproj"
               }
             }
           }
